@@ -49,3 +49,12 @@ $factory->define(App\Favorite::class, function (Faker\Generator $faker) {
         'material_id' => $faker->randomElement($material_ids),
     ];
 });
+$factory->define(App\Subscribe::class, function (Faker\Generator $faker) {
+    $admin_ids = Admin::lists('id')->toArray();
+    $tag_ids = \App\Tag::lists('id')->toArray();
+    return [
+//        'body' => $faker->paragraph,
+        'admin_id' => $faker->randomElement($admin_ids),
+        'tag_id' => $faker->randomElement($tag_ids),
+    ];
+});

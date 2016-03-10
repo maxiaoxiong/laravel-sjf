@@ -39,7 +39,7 @@ class AuthController extends BaseController
         }
 
         // all good so return the token
-        return response()->json(compact('token'));
+        return response()->json(['token'=>$token,'status_code'=>200]);
     }
 
     public function register(UserRegisterRequest $request)

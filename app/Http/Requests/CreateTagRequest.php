@@ -25,7 +25,8 @@ class CreateTagRequest extends Request
     {
         return [
             'name' => 'required',
-            'category_id' => 'required'
+            'category_id' => 'required',
+            'tag_img' => 'required'
         ];
     }
 }

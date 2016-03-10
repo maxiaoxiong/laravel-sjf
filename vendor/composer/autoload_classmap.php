@@ -18,6 +18,7 @@ return array(
     'CreateRoleUserTable' => $baseDir . '/database/migrations/2014_10_13_100000_create_role_user_table.php',
     'CreateRolesTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_roles_table.php',
     'CreateSupportsTable' => $baseDir . '/database/migrations/2016_03_02_130049_create_supports_table.php',
+    'CreateTagSubscribeTable' => $baseDir . '/database/migrations/2016_03_07_021911_create_tag_subscribe_table.php',
     'CreateTagsTable' => $baseDir . '/database/migrations/2016_02_20_074253_create_tags_table.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',

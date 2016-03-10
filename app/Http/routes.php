@@ -23,11 +23,16 @@ $api->version('v1',function($api){
 
        $api->get('/search','SearchController@searchByKeyWord');
 
+       $api->get('subscribe','SubscribeController@subscribe');
+
        $api->put('category/{id}/material','CategoriesController@showCatMat');
+       $api->get('category/{id}','CategoriesController@showCatTag');
        $api->get('category','CategoriesController@showCategories');
 
        $api->get('tags','TagsController@showTags');
        $api->put('tags/{id}/materials','TagsController@showTagMaterials');
+
+       $api->get('tags/rank','TagsController@getRank');
 
        $api->put('user/{id}/materials','UsersController@getUserMaterial');
 
@@ -35,10 +40,21 @@ $api->version('v1',function($api){
        $api->get('materials/{id}','MaterialsController@showDetail');
        $api->get('materials/{id}/comments','CommentsController@show');
 
+       $api->get('journal','JournalController@show');
+
+       $api->get('guess','GuessController@show');
+
+       $api->get('relation/{id}','MaterialsController@relation');
+
+       $api->get('test','SubscribeController@test');
        $api->group(['middleware'=>'jwt.auth'],function($api){
+           $api->get('subscribe/user','SubscribeController@subscribeUser');
 
            $api->get('support/{id}','SupportsController@store');
            $api->delete('support/{id}','SupportsController@destroy');
+
+           $api->get('subscribe/{id}','SubscribeController@store');
+           $api->delete('subscribe/{id}','SubscribeController@destroy');
 
            $api->post('comments','CommentsController@store');
 
@@ -50,7 +66,6 @@ $api->version('v1',function($api){
            $api->delete('favorites/{id}','FavoritesController@destroy');
 
            $api->get('user/me','UsersController@getAuthenticatedUser');
-//           $api->get('materials','MaterialsController@index');
        });
    });
 });

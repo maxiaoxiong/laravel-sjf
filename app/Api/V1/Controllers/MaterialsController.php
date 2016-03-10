@@ -38,6 +38,8 @@ class MaterialsController extends BaseController
     public function showDetail($id,Request $request)
     {
         $materials = Material::find($id);
+        $materials->viewcount = ($materials->viewcount)+1;
+        $materials->save();
         if($request->get('token')){
             if(!$materials){
                 return $this->response->errorNotFound('Material not found');
@@ -49,5 +51,13 @@ class MaterialsController extends BaseController
             }
             return $this->item($materials,new MaterialDetialsTransformer());
         }
+    }
+
+    public function relation($id)
+    {
+        $materials = Material::find($id);
+        $category_id = $materials->category->id;
+        $materials = Category::find($category_id)->materials->take(6);
+        return $materials;
     }
 }
