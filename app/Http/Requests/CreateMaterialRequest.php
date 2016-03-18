@@ -27,7 +27,8 @@ class CreateMaterialRequest extends Request
             'title' => 'min:2|required',
             'category_id' => 'required',
             'introduce' => 'required',
-            'img_url' => 'required',
+            'img_url1' => 'required',
+            'admin_id' => 'required',
             'content' => 'required',
         ];
     }

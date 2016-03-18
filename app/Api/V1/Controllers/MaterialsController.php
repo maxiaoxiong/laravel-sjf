@@ -19,10 +19,10 @@ use Tymon\JWTAuth\Facades\JWTAuth;
 
 class MaterialsController extends BaseController
 {
-    public function index(){
-        $material = Material::paginate(5);
+    public function index(Request $request){
+        $material = Material::all()->forPage($request->get('page'),5);
 
-        return $this->item($material,new MaterialTransformer());
+        return $this->collection($material,new MaterialTransformer());
     }
 
     public function show($id)

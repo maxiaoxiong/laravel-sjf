@@ -64,6 +64,27 @@ return [
                 ]
             ]
         ],
+        "投稿申请"=>[
+            'icon'       => 'mdi-toggle-radio-button-on',
+            'permission' => 'admin',
+            'children'   => [
+                '审核列表'  => [
+                    'uri' => 'contributes',
+                ],
+            ],
+        ],
+        '日刊管理' => [
+            'icon'       => 'mdi-toggle-radio-button-on',
+            'permission' => 'admin',
+            'children'   => [
+                '添加日刊'  => [
+                    'uri' => 'journals',
+                ],
+                '日刊列表'  => [
+                    'uri' => 'journals/show',
+                ],
+            ],
+        ],
     ],
 
     'qiniu'                       => [

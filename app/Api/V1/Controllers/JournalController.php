@@ -9,14 +9,21 @@
 namespace App\Api\V1\Controllers;
 
 
+use App\Api\V1\Transformers\JournalTransformer;
 use App\Api\V1\Transformers\MaterialDetailTransformer;
+use App\Journal;
 use App\Material;
+use Illuminate\Http\Request;
 
 class JournalController extends BaseController
 {
-    public function show()
+    public function show(Request $request)
     {
-        $materials = Material::orderBy('created_at','desc')->take(10)->get();
-        return $this->collection($materials,new MaterialDetailTransformer());
+        if($request->get('token')){
+
+        }
+        $journal = Journal::with('material')->orderBy('created_at','desc')->take(10)->get();
+//        dd($journal[0]->material);
+        return $this->collection($journal,new JournalTransformer());
     }
 }

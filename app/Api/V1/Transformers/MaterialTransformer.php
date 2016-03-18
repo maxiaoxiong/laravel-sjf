@@ -19,11 +19,16 @@ class MaterialTransformer extends TransformerAbstract
         return [
             'id'  => $material['id'],
             'title' => $material['title'],
-            'author' => $material['author'],
-            'img_url' => $material['img_url'],
+            'author' => $material->admin,
+            'img_url1' => $material['img_url1'],
+            'img_url2' => $material['img_url2'],
+            'img_url3' => $material['img_url3'],
             'introduce' => $material['introduce'],
             'created_at' => $material['created_at'],
-            'tags' => $material->tags->lists('name','id','created_at')
+            'view_count' => $material['viewcount'],
+            'comment_count' => count($material->comments),
+            'support_count' => count($material->supports),
+            'tags' => $material->tags->lists('name','id')
         ];
     }
 

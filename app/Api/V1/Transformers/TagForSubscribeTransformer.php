@@ -20,7 +20,8 @@ class TagForSubscribeTransformer extends TransformerAbstract
             'id' => $tag['id'],
             'name' => $tag['name'],
             'tag_img' => $tag['tag_img'],
-            'count' => count($tag->admin)
+            'count' => count($tag->admin),
+            'user_subscribe' => 0
         ];
     }
 }

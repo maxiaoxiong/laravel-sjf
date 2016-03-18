@@ -29,10 +29,10 @@ class TagsController extends BaseController
         return $this->collection($tags,new TagTransformer());
     }
 
-    public function showTagMaterials($id)
+    public function showTagMaterials($id,Request $request)
     {
-        $materials = Tag::find($id)->materials()->paginate(10);
-        return $this->item($materials,new MaterialTransformer());
+        $materials = Tag::find($id)->materials->forPage($request->get('page'),10);
+        return $this->collection($materials,new MaterialTransformer());
     }
 
     public function getRank(Request $request)

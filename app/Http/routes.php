@@ -45,7 +45,7 @@ $api->version('v1',function($api){
        $api->get('guess','GuessController@show');
 
        $api->get('relation/{id}','MaterialsController@relation');
-
+       $api->get('material','MaterialsController@index');
        $api->get('test','SubscribeController@test');
        $api->group(['middleware'=>'jwt.auth'],function($api){
            $api->get('subscribe/user','SubscribeController@subscribeUser');
@@ -66,6 +66,7 @@ $api->version('v1',function($api){
            $api->delete('favorites/{id}','FavoritesController@destroy');
 
            $api->get('user/me','UsersController@getAuthenticatedUser');
+           $api->get('user/contribute','UsersController@contribute');
        });
    });
 });
