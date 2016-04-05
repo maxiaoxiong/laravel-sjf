@@ -18,7 +18,7 @@ class SupportsController extends BaseController
 
         $user->supports()->attach($id);
 
-        return response()->json(['message'=>'support success']);
+        return response()->json(['status_code'=>200,'message'=>'support success']);
     }
 
     public function destroy($id)
@@ -27,6 +27,6 @@ class SupportsController extends BaseController
 
         $user->supports()->detach($id);
 
-        return response()->json(['message'=>'cancel support success']);
+        return response()->json(['status_code'=>200,'message'=>'cancel support success']);
     }
 }

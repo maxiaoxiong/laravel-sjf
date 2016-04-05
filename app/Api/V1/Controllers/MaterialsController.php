@@ -19,7 +19,8 @@ use Tymon\JWTAuth\Facades\JWTAuth;
 
 class MaterialsController extends BaseController
 {
-    public function index(Request $request){
+    public function index(Request $request)
+    {
         $material = Material::all()->forPage($request->get('page'),5);
 
         return $this->collection($material,new MaterialTransformer());

@@ -44,7 +44,7 @@ class FavoritesController extends Controller
 
         $user->favorites()->attach($id);
 
-        return response()->json(['message'=>'store success']);
+        return response()->json(['status_code'=>200,'message'=>'收藏成功']);
     }
 
     /**
@@ -91,5 +91,6 @@ class FavoritesController extends Controller
         $user = JWTAuth::parseToken()->authenticate();
 
         $user->favorites()->detach($id);
+        return response()->json(['status_code'=>200,'message'=>'取消收藏成功']);
     }
 }

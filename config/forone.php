@@ -85,6 +85,15 @@ return [
                 ],
             ],
         ],
+        '反馈意见' => [
+            'icon'       => 'mdi-toggle-radio-button-on',
+            'permission' => 'admin',
+            'children'   => [
+                '反馈列表'  => [
+                    'uri' => 'feedbacks',
+                ],
+            ],
+        ],
     ],
 
     'qiniu'                       => [

@@ -10,6 +10,7 @@ return array(
     'CreateAdminsTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_admins_table.php',
     'CreateCommentsTable' => $baseDir . '/database/migrations/2016_02_25_031919_create_comments_table.php',
     'CreateFavoritesTable' => $baseDir . '/database/migrations/2016_02_25_021005_create_favorites_table.php',
+    'CreateFeedbacksTable' => $baseDir . '/database/migrations/2016_04_05_074108_create_feedbacks_table.php',
     'CreateIsAuthorTable' => $baseDir . '/database/migrations/2016_03_17_001948_create_is_author_table.php',
     'CreateJournalsTable' => $baseDir . '/database/migrations/2016_03_18_024119_create_journals_table.php',
     'CreateMaterialTagTable' => $baseDir . '/database/migrations/2016_02_20_074625_create_material_tag_table.php',

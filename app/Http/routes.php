@@ -67,6 +67,8 @@ $api->version('v1',function($api){
 
            $api->get('user/me','UsersController@getAuthenticatedUser');
            $api->get('user/contribute','UsersController@contribute');
+
+           $api->post('advice','FeedbacksController@store');
        });
    });
 });

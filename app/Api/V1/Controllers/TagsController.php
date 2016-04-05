@@ -32,6 +32,7 @@ class TagsController extends BaseController
     public function showTagMaterials($id,Request $request)
     {
         $materials = Tag::find($id)->materials->forPage($request->get('page'),10);
+        dd($materials);
         return $this->collection($materials,new MaterialTransformer());
     }
 
